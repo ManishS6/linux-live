@@ -31,8 +31,8 @@ goto setupEFI
 goto setupEFI
 
 :setupEFI
-mkdir %DISK%:\Boot\EFI
-copy \boot\EFI\* %DISK%\Boot\EFI
+mkdir %DISK%:\EFI\Boot
+copy \boot\EFI\Boot\* %DISK%:\EFI\Boot
 goto setupDone
 
 :setupDone

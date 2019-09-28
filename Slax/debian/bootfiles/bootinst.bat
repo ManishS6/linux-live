@@ -64,7 +64,7 @@ goto errorFound
 
 :setupEFI
 mkdir %DISK%:\Boot\EFI
-copy \boot\EFI\* %DISK%\Boot\EFI
+copy \slax\boot\EFI\* %DISK%\Boot\EFI
 goto setupDone
 
 

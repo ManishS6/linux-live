@@ -54,13 +54,19 @@ goto setup95
 
 :setupNT
 \slax\boot\syslinux.exe -maf -d /slax/boot/ %DISK%:
-if %ERRORLEVEL% == 0 goto setupDone
+if %ERRORLEVEL% == 0 goto setupEFI
 goto errorFound
 
 :setup95
 \slax\boot\syslinux.com -maf -d /slax/boot/ %DISK%:
-if %ERRORLEVEL% == 0 goto setupDone
+if %ERRORLEVEL% == 0 goto setupEFI
 goto errorFound
+
+:setupEFI
+mkdir %DISK%:\Boot\EFI
+copy \boot\EFI\* %DISK%\Boot\EFI
+goto setupDone
+
 
 :setupDone
 echo Installation finished.

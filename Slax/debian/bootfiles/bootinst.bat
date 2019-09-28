@@ -63,10 +63,9 @@ if %ERRORLEVEL% == 0 goto setupEFI
 goto errorFound
 
 :setupEFI
-mkdir %DISK%:\Boot\EFI
-copy \slax\boot\EFI\* %DISK%\Boot\EFI
+mkdir %DISK%:\EFI\Boot
+copy \slax\boot\EFI\Boot\* %DISK%:\EFI\Boot
 goto setupDone
-
 
 :setupDone
 echo Installation finished.

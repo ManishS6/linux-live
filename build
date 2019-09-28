@@ -61,7 +61,6 @@ cp bootfiles/efi-files/syslinux.efi $BOOT/EFI/Boot/bootx64.efi
 cp bootfiles/efi-files/{ldlinux.e64,menu.c32,libutil.c32} $BOOT/EFI/Boot
 cat $BOOT/syslinux.cfg | sed -r "s:/$LIVEKITNAME/boot/vesa::" > $BOOT/EFI/Boot/syslinux.cfg
 
-
 # create compressed 01-core.sb
 COREFS=""
 for i in $MKMOD; do

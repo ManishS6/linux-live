@@ -56,7 +56,7 @@ cp $VMLINUZ $BOOT/ || exit
 
 mkdir -p $BOOT/EFI/Boot
 cp bootfiles/efi-files/syslinux.efi $BOOT/EFI/Boot/bootx64.efi
-cp bootfiles/efi-files/{ldlinux.e64,menu.c32,libutil.32} $BOOT/EFI/Boot
+cp bootfiles/efi-files/{ldlinux.e64,menu.c32,libutil.c32} $BOOT/EFI/Boot
 cp $BOOT/syslinux.cfg $BOOT/EFI/Boot/syslinux.cfg
 
 

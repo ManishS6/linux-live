@@ -40,13 +40,9 @@ if [ "$DEV" != "$PART" ]; then
    ) | fdisk $DEV >/dev/null 2>&1
 fi
 
-# Now to be able to boot from most of UEFI devices
-EFIDIR="$BOOT/EFI/boot"
-mkdir -p "$EFIDIR"
-cp efi-files/* "$EFIDIR"
-
-# I didn't rename the binary in place so it could be updated more easily
-mv "$EFIDIR/syslinux.efi" "$EFIDIR/bootx64.efi"
+# UEFI boot loader
+mkdir -p "EFI/Boot"
+cp "boot/EFI/Boot/*" "EFI/Boot"
 
 echo "Boot installation finished."
 cd "$CWD"

@@ -148,6 +148,10 @@ if [ "$DEV" != "$PART" ]; then
    ) | fdisk $DEV >/dev/null 2>&1
 fi
 
+# UEFI boot loader
+mkdir -p "EFI/Boot"
+cp "slax/boot/EFI/Boot/*" "EFI/Boot"
+
 echo "Boot installation finished."
 echo "Press Enter..."
 read junk

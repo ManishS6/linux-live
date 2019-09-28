@@ -54,6 +54,12 @@ cat bootfiles/syslinux.cfg | sed -r "s:/boot/:/$LIVEKITNAME/boot/:" > $BOOT/sysl
 cat bootfiles/bootinst.bat | sed -r "s:/boot/:/$LIVEKITNAME/boot/:" | sed -r "s:\\\\boot\\\\:\\\\$LIVEKITNAME\\\\boot\\\\:" > $BOOT/bootinst.bat
 cp $VMLINUZ $BOOT/ || exit
 
+mkdir -p $BOOT/EFI/Boot
+cp bootfiles/efi-files/syslinux.efi $BOOT/EFI/Boot/bootx64.efi
+cp bootfiles/efi-files/{ldlinux.e64,menu.c32,libutil.32} $BOOT/EFI/Boot
+cp $BOOT/syslinux.cfg $BOOT/EFI/Boot/syslinux.cfg
+
+
 # create compressed 01-core.sb
 COREFS=""
 for i in $MKMOD; do

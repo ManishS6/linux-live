@@ -149,8 +149,8 @@ if [ "$DEV" != "$PART" ]; then
 fi
 
 # UEFI boot loader
-mkdir -p "EFI/Boot"
-cp "slax/boot/EFI/Boot/*" "EFI/Boot"
+mkdir -p "$BOOT/../../EFI"
+mv "EFI/Boot" "$BOOT/../../EFI/"
 
 echo "Boot installation finished."
 echo "Press Enter..."
